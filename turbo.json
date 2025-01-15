@@ -20,6 +20,10 @@
     "start": {
       "cache": false,
       "outputs": []
+    },
+    "eas-update": {
+      "cache": false,
+      "dependsOn": ["build"]
     }
   }
 }
