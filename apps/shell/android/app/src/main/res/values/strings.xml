@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">shell</string>
+  <string name="app_name">shell</string>
+  <string name="expo_runtime_version">exposdk:52.0.0</string>
 </resources>
