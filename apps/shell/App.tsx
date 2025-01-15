@@ -1,15 +1,23 @@
 import { StatusBar } from 'expo-status-bar';
-import React, { Suspense } from 'react';
+import React, { Suspense, useEffect } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator, StackScreenProps } from '@react-navigation/stack';
 import { RootStackParamList } from './navigation';
+import { useUpdates, reloadAsync } from 'expo-updates';
 
 const Stack = createStackNavigator<RootStackParamList>();
 const LoginScreen = React.lazy(() => import('auth-mfe').then((module) => ({ default: module.LoginScreen })));
 const MainNavigator = React.lazy(() => import('main-mfe').then((module) => ({ default: module.MainStackNavigation })));
 
 export default function App() {
+  const { isUpdateAvailable, isUpdatePending } = useUpdates();
+  useEffect(() => {
+    if(isUpdatePending){
+      reloadAsync();
+    }
+  }, [isUpdatePending]);
+
   return (
     <NavigationContainer>
       <Stack.Navigator>
