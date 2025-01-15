@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { Suspense, useEffect } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Alert, StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator, StackScreenProps } from '@react-navigation/stack';
 import { RootStackParamList } from './navigation';
@@ -12,8 +12,8 @@ const MainNavigator = React.lazy(() => import('main-mfe').then((module) => ({ de
 
 export default function App() {
   const { isUpdateAvailable, isUpdatePending } = useUpdates();
-  useEffect(() => {
-    if(isUpdatePending){
+  useEffect(() => {    
+    if(isUpdatePending) {      
       reloadAsync();
     }
   }, [isUpdatePending]);
