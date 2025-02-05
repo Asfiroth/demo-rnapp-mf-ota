@@ -1,11 +1,3 @@
-import React from 'react';
-import MainNavigationStack from '@/AppStack';
+import { UserLoginScreen } from 'demo-ota-auth';
 
-export default function HomePage() {
-  return (<MainNavigationStack />);
-}
-// // import { Redirect } from 'expo-router';
-
-// // export default function IndexPage() {
-// //   return <Redirect href="/login" />;
-// // }
+export default UserLoginScreen;

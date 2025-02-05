@@ -28,7 +28,7 @@
       },
       "package": "com.asfiroth.shell"
     },
-    "ios": {
+    "ios": {      
       "supportsTablet": true,
       "bundleIdentifier": "com.asfiroth.shell"
     },
